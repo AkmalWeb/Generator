@@ -76,14 +76,17 @@ input {
     <p> Create and upload multiple records at once. No more waiting and clicking!</p>
 
     <h3>Follow the steps below:</h3>
-    <div class="Intro_section">
+   
+   <fieldset>
+   <div class="Intro_section">
         <div class="container">
             <h3>Step 1:</h3>
             <p class="Intro_text">
-                Make sure you are on Moog network or VPN.
+                Make sure you are on Moog network or VPN. <img src="POP.jpg" alt="Pop block">
+
             </p>
             <p class="video tutorial">
-                <a href="https://akmalweb.github.io/reporting/Instructions.mp4" target="_blank"
+                <a href="https://akmalweb.github.io/Generator/Instructions.mp4" target="_blank"
                     rel="noopener noreferrer">Video Tutorial</a>
             </p>
             <p class="Intro_text">Login and check the open dates.</p>
@@ -101,7 +104,9 @@ input {
 			
         </div>
     </div>
+</fieldset>
 
+<fieldset>
     <h3>Step 2:</h3>
     <div class="Intro_section">
         <div class="container">
@@ -152,8 +157,9 @@ input {
             </form>
         </div>
     </div>
-
-    <h3>Step 3:</h3>
+</fieldset>
+   <fieldset>
+   <h3>Step 3:</h3>
     <div class="Intro_section">
         <div class="container">
             <p class="Intro_text">
@@ -168,7 +174,8 @@ input {
             </div>
         </div>
     </div>
-
+    </fieldset>
+<fieldset>
     <h3>Step 4:</h3>
     <div class="Intro_section">
         <div class="container">
@@ -200,7 +207,7 @@ input {
 		</div>
 		<br>
     </div>
-
+</fieldset>
 
      <script>
         function generateLink(date, subtask, hours) {
@@ -224,7 +231,7 @@ input {
             const subtaskList = document.querySelectorAll(".subtask-selector");
             const hoursList = document.querySelectorAll(".hours-selector");
 
-            // Validate if dates are missing
+  
             let emptyDate = false;
             for (let i = 0; i < dateList.length; i++) {
                 if (dateList[i].value === "") {
@@ -238,8 +245,7 @@ input {
                 return;
             }
 
-            // Validate if total hours per day exceed the limit
-            let totalHours = {};
+             let totalHours = {};
             for (let i = 0; i < dateList.length; i++) {
                 const date = dateList[i].value;
                 const hours = parseFloat(hoursList[i].value);
@@ -265,20 +271,20 @@ input {
                 if (confirmBox === false) {
                     return;
                 } else {
-                    // Check if the message has already been displayed
+                   
                     if (!document.querySelector(".exceeded-hours-message")) {
                         const messageBox = document.createElement("div");
                         messageBox.textContent = "Total day hours exceeded, please check!";
                         messageBox.style.color = "red";
-                        messageBox.classList.add("exceeded-hours-message"); // add a class to the messageBox
-                        const targetElement = document.querySelector("#link-list"); // replace "my-container" with the ID of the element you want to append the message to
+                        messageBox.classList.add("exceeded-hours-message"); 
+                        const targetElement = document.querySelector("#link-list"); 
                         targetElement.appendChild(messageBox);
                     }
                 }
             }
 
             const list = document.getElementById("hyperlink-list");
-            list.innerHTML = ""; // Clear previous links
+            list.innerHTML = ""; 
 
             for (let i = 0; i < dateList.length; i++) {
                 const date = dateList[i].value;
@@ -302,7 +308,7 @@ input {
             const links = document.querySelectorAll("#hyperlink-list a");
             const numLinks = links.length;
             let tabsClosed = 0;
-            let interval = 7000; // Change the interval between opening tabs here
+            let interval = 7000; 
 
             function openNextTab(index) {
                 if (index < numLinks) {
@@ -397,8 +403,7 @@ input {
         });
     </script>
 	
-<!-- footer section Start -->
-      <!-- Donate section start -->
+
       <p class="Donate_text">I made this in my private time.</p>
             <p class="Donate_text">Did I save your time?<a href="https://www.paypal.com/donate/?hosted_button_id=8TFNXVNPKKX9Q"target="_blank" rel="noopener noreferrer"> Show appreciation here.</a></p>
         
@@ -406,11 +411,9 @@ input {
          <div class="container">
         </div>
       </div>
-      <!-- copyright section end  -->
-
-     <!-- copyright section start -->
+     
       
-            <p class="copyright_text">By Akmal Zakeryaev 2023 All Rights Reserved (At your own risk).
+            <p class="copyright_text">By Akmal Zakeryaev 2024 All Rights Reserved (At your own risk).
               <a href="https://en.wikipedia.org/wiki/Copyright"target="_blank" rel="noopener noreferrer"> Copy Rights.</a></p>
             <p class="feedback">Share your feedback: <a href="https://ncv.microsoft.com/vpssNQPKlV"target="_blank" rel="noopener noreferrer">Feedback form.</a></p>
          
@@ -419,7 +422,7 @@ input {
          <div class="container">
          </div>
       </div>
-      <!-- copyright section end  -->
+     
 <html>
 <head><!DOCTYPE html>
 <html lang="en">
@@ -427,7 +430,7 @@ input {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Styles for the pop-up */
+        
         .popup {
             display: none;
             position: fixed;
@@ -441,7 +444,7 @@ input {
             z-index: 1000;
         }
 
-        /* Styles for the overlay background */
+       
         .overlay {
             display: none;
             position: fixed;
@@ -453,7 +456,7 @@ input {
             z-index: 999;
         }
 
-        /* Style for the close button */
+     
         .close {
             position: absolute;
             top: 10px;
@@ -464,11 +467,8 @@ input {
 </head>
 <body>
 
-<!-- Your existing HTML form goes here -->
 
-<button type="button" id="generate-links-button">Create record</button>
 
-<!-- Pop-up content -->
 <div class="overlay" id="overlay"></div>
 <div class="popup" id="popup">
     <span class="close" onclick="closePopup()">×</span>
@@ -478,26 +478,25 @@ input {
 </div>
 
 <script>
-    // Function to display the pop-up
+   
     function openPopup() {
         document.getElementById("overlay").style.display = "block";
         document.getElementById("popup").style.display = "block";
     }
 
-    // Function to close the pop-up
+   
     function closePopup() {
         document.getElementById("overlay").style.display = "none";
         document.getElementById("popup").style.display = "none";
     }
 
-    // Function to open the donate page in a new window
+   
     function openDonatePage() {
         window.open("https://www.paypal.com/donate/?hosted_button_id=8TFNXVNPKKX9Q", "_blank");
         closePopup();
     }
 
-    // Event listener for the button click
-    document.getElementById("generate-links-button").addEventListener("click", openPopup);
+        document.getElementById("generate-links-button").addEventListener("click", openPopup);
 </script>
 
 </body>
