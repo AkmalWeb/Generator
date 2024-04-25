@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<form action="/action_page.php" style="max-width: 800px; padding-left: 400px;">
+<form action="/action_page.php" style="max-width: 800px; padding-left: 200px;">
     <title>Project time reporting - Mass Upload Generator</title>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -162,7 +162,7 @@ input {
         </div>
     </div>
 </fieldset>
-  <form action="/action_page.php" style="max-width: 800px; padding-left: 400px;">  
+  <form action="/action_page.php" style="max-width: 800px; padding-left: 200px;">  
    <fieldset>
        <legend><h3>Step 3:</h3></legend>
     <div class="Intro_section">
@@ -471,39 +471,6 @@ input {
 </head>
 <body>
 
-
-
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-    <span class="close" onclick="closePopup()">×</span>
-    <p>Did this tool help? It took my time to save yours. Please donate.</p>
-    <button onclick="openDonatePage()">Donate</button>
-    <button onclick="closePopup()">I don't want to</button>
-</div>
-
-<script>
-   
-    function openPopup() {
-        document.getElementById("overlay").style.display = "block";
-        document.getElementById("popup").style.display = "block";
-    }
-
-   
-    function closePopup() {
-        document.getElementById("overlay").style.display = "none";
-        document.getElementById("popup").style.display = "none";
-    }
-
-   
-    function openDonatePage() {
-        window.open("https://www.paypal.com/donate/?hosted_button_id=8TFNXVNPKKX9Q", "_blank");
-        closePopup();
-    }
-
-      window.onload = function() {
-        document.getElementById("generate-links-button").addEventListener("click", openPopup);
-    }
-</script>
 
 </body>
 </html>
